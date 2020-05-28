@@ -1,0 +1,6 @@
+---
+- name: Generate Configuration Template from Jinj2
+  hosts: localhost
+
+  roles:
+    - router

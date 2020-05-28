@@ -1,0 +1,4 @@
+---
+- name: Generate Configuration Template from Jinja2
+  template: src=router.j2 dest=./config/{{item.hostname}}-template.txt
+  with_items: "{{routers}}"

@@ -1,0 +1,11 @@
+---
+routers:
+
+  - hostname: R1
+    loopbackip: 1.1.1.1 255.255.255.255
+
+  - hostname: R2
+    loopbackip: 2.2.2.2 255.255.255.255
+
+  - hostname: R3
+    loopbackip: 3.3.3.3 255.255.255.255
