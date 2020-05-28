@@ -7,4 +7,19 @@ git add ansible.cfg
 git status
 git --all
 git status
+git config --global user.name "Reno"
+git config --global user.email "renotensai@gmail.com"
 git commit --all -m "first commit"
+git status
+change ansible.cfg
+git status
+git add ansible.cfg
+git status
+git commit ansible.cfg -m "change fork to 4"
+git log
+
+
+Add to Public git
+1. Create new Repository in github.com
+2. git remote add origin https://github.com/renotensai/ansible.git
+3. git push -u origin master
