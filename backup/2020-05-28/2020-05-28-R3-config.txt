@@ -1,0 +1,98 @@
+Building configuration...
+
+Current configuration : 1107 bytes
+!
+! Last configuration change at 16:25:14 EET Thu May 28 2020
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname R3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+username reno privilege 15 password 0 reno123
+no aaa new-model
+clock timezone EET 2 0
+!
+!
+!
+!
+!
+no ipv6 cef
+!
+!
+!
+!
+!
+ip domain-name cisco.com
+!
+!
+ip cef
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ no switchport
+ ip address 192.168.116.13 255.255.255.0
+!
+interface Ethernet0/1
+!
+interface Ethernet0/2
+!
+interface Ethernet0/3
+!
+ip forward-protocol nd
+!
+no ip http server
+ip ssh version 2
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ login local
+ transport input ssh
+!
+ntp server 1.1.1.1
+ntp server 2.2.2.2
+ntp server 10.10.10.10
+ntp server 3.3.3.3
+ntp server 4.4.4.4
+ntp server 5.5.5.5
+!
+!
+end
