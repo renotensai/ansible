@@ -1,0 +1,7 @@
+---
+# R2 Specific Connectivity Information
+ansible_user: "reno2"
+
+# Host Configuration
+hostname:
+  name: R2

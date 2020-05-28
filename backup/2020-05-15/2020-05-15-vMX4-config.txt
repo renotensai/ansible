@@ -1,0 +1,43 @@
+## Last commit: 2020-05-13 14:51:44 UTC by root
+version 14.1R4.8;
+system {
+    host-name vMX4;
+    root-authentication {
+        encrypted-password "$1$CTVuKeme$kmd/rCmkWEK/EcVj.NQ6r0"; ## SECRET-DATA
+    }
+    login {
+        user reno {
+            uid 2000;
+            class super-user;
+            authentication {
+                encrypted-password "$1$tfCcTHxC$wZd1X2EUXbw0kSS9kcXei0"; ## SECRET-DATA
+            }
+        }
+    }
+    services {
+        ssh {
+            protocol-version v2;
+        }
+    }
+    syslog {
+        user * {
+            any emergency;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+}
+interfaces {
+    ge-0/0/0 {
+        unit 0 {
+            family inet {
+                address 192.168.116.14/24;
+            }
+        }
+    }
+}

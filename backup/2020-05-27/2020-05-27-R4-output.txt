@@ -1,0 +1,105 @@
+
+########### show version ###########
+Hostname: vMX4
+Model: vmx
+Junos: 14.1R4.8
+JUNOS Base OS Software Suite [14.1R4.8]
+JUNOS Base OS boot [14.1R4.8]
+JUNOS Crypto Software Suite [14.1R4.8]
+JUNOS Online Documentation [14.1R4.8]
+JUNOS Kernel Software Suite [14.1R4.8]
+JUNOS Routing Software Suite [14.1R4.8]
+JUNOS Runtime Software Suite [14.1R4.8]
+JUNOS Services AACL PIC package [14.1R4.8]
+JUNOS Services Application Level Gateway [14.1R4.8]
+JUNOS Services Application Level Gateway (xlp64) [14.1R4.8]
+JUNOS Services Application Level Gateway (xlr64) [14.1R4.8]
+JUNOS AppId Services PIC Package [14.1R4.8]
+JUNOS Services AppId PIC package (xlr64) [14.1R4.8]
+JUNOS Border Gateway Function PIC package [14.1R4.8]
+JUNOS Services Captive Portal and Content Delivery PIC package [14.1R4.8]
+JUNOS Services HTTP Content Management PIC package [14.1R4.8]
+JUNOS Services HTTP Content Management PIC package (xlr64) [14.1R4.8]
+JUNOS IDP Services PIC Package [14.1R4.8]
+JUNOS Services JFLOW PIC package [14.1R4.8]
+JUNOS Services JFLOW PIC package (xlp64) [14.1R4.8]
+JUNOS Services LL-PDF PIC package [14.1R4.8]
+JUNOS MobileNext PIC package [14.1R4.8]
+JUNOS MobileNext PIC package (xlr64) [14.1R4.8]
+JUNOS Services Mobile Subscriber Service Container package [14.1R4.8]
+JUNOS Services Mobile Subscriber Service PIC package (xlr64) [14.1R4.8]
+JUNOS Services NAT PIC package [14.1R4.8]
+JUNOS Services NAT PIC package (xlp64) [14.1R4.8]
+JUNOS Services NAT PIC package (xlr64) [14.1R4.8]
+JUNOS Services PTSP PIC package [14.1R4.8]
+JUNOS Services RPM PIC package [14.1R4.8]
+JUNOS Services RPM PIC package (xlp64) [14.1R4.8]
+JUNOS Services Stateful Firewall PIC package [14.1R4.8]
+JUNOS Services Stateful Firewall PIC package (xlp64) [14.1R4.8]
+JUNOS Services Stateful Firewall PIC package (xlr64) [14.1R4.8]
+JUNOS BSG PIC package [14.1R4.8]
+JUNOS Services Crypto Base PIC package [14.1R4.8]
+JUNOS Services Crypto Base PIC package [14.1R4.8]
+JUNOS Services Crypto Base PIC package(xlr64) [14.1R4.8]
+JUNOS Services IPSec PIC package [14.1R4.8]
+JUNOS Services IPSec PIC package [14.1R4.8]
+JUNOS Services IPSec PIC(xlr64) package [14.1R4.8]
+JUNOS Services SSL PIC package [14.1R4.8]
+JUNOS Packet Forwarding Engine Trio Simulation Package [14.1R4.8]
+
+
+########### show lldp neighbor ###########
+show lldp neighbors
+
+
+########### show interface terse ###########
+show interfaces terse 
+Interface               Admin Link Proto    Local                 Remote
+ge-0/0/0                up    up
+ge-0/0/0.0              up    up   inet     192.168.116.14/24
+                                   multiservice
+lc-0/0/0                up    up
+lc-0/0/0.32769          up    up   vpls    
+pfe-0/0/0               up    up
+pfe-0/0/0.16383         up    up   inet    
+                                   inet6   
+pfh-0/0/0               up    up
+pfh-0/0/0.16383         up    up   inet    
+ge-0/0/1                up    up
+ge-0/0/2                up    up
+ge-0/0/3                up    up
+ge-0/0/4                up    up
+ge-0/0/5                up    up
+ge-0/0/6                up    up
+ge-0/0/7                up    up
+ge-0/0/8                up    up
+ge-0/0/9                up    up
+cbp0                    up    up
+demux0                  up    up
+dsc                     up    up
+em0                     up    up
+em1                     up    up
+em1.0                   up    up   inet     172.16.0.1/16   
+                                   inet6    fe80::5200:ff:fe04:1/64
+em2                     up    up
+em3                     up    up
+em4                     up    up
+em5                     up    up
+gre                     up    up
+ipip                    up    up
+irb                     up    up
+lo0                     up    up
+lo0.16384               up    up   inet     127.0.0.1           --> 0/0
+lo0.16385               up    up   inet     128.0.0.1           --> 0/0
+                                            128.0.0.4           --> 0/0
+                                   inet6    fe80::200:f:fc00:0
+lo0.32768               up    up  
+lsi                     up    up
+mtun                    up    up
+pimd                    up    up
+pime                    up    up
+pip0                    up    up
+pp0                     up    up
+tap                     up    up
+vtep                    up    up
+

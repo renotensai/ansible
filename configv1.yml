@@ -1,0 +1,21 @@
+---
+# Ansible Playbook for Configure Devices
+
+- hosts: Cisco_Routers
+
+  tasks:
+    - name: Configure Single Line IOS
+      ios_config:
+        lines: ntp server 1.1.1.1
+
+    - name: Configure Multiple Line IOS
+      ios_config:
+        src: "/home/reno/Documents/ansiblev3/config/configv1.txt"
+    
+    - name: Configure from Jinja2 Template
+      ios_config:
+        src: "/home/reno/Documents/ansiblev3/config/configv1j2.j2"
+
+    - name: Save the Config Always
+      ios_config:
+        save_when: always 

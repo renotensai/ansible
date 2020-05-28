@@ -1,0 +1,10 @@
+cd Documents/ansiblev3
+git status
+yum install git
+git status
+git init
+git add ansible.cfg
+git status
+git --all
+git status
+git commit --all -m "first commit"

@@ -1,0 +1,8 @@
+[Cisco_Routers]
+
+R1 ansible_host=192.168.116.11
+R2 ansible_host=192.168.116.12
+R3 ansible_host=192.168.116.13
+
+[vMX]
+R4 ansible_host=192.168.116.14

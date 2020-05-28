@@ -1,0 +1,3 @@
+---
+# vMX Connectivity
+ansible_network_os: "junos"

@@ -1,0 +1,31 @@
+---
+## Playbook to show version on IOS
+
+- hosts: Cisco_Routers
+
+  tasks:
+   - name: Check Version
+     ios_command:
+       commands: show version
+     register: version
+
+   - name: Save output to ~/backup/
+     copy:
+       content: "{{ version.stdout[0] }}"
+       dest: "/home/reno/Documents/ansiblev3/backup/{{ inventory_hostname }}-version.txt"
+
+- hosts: vMX
+
+  tasks:
+   - name: Check Version
+     junos_command:
+       commands: show version
+     register: version2
+
+   - name: Save output to /backup/
+     copy:
+       content: "{{version2.stdout[0]}}"
+       dest: "/home/reno/Documents/ansiblev3/backup/{{inventory_hostname}}-version.txt"
+
+
+

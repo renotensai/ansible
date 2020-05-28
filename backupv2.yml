@@ -1,0 +1,48 @@
+---
+## Playbook to backup config on IOS & junos
+
+- hosts: localhost
+
+  tasks:
+   - name: Get ansible data/time facts
+     setup:
+       filter: "ansible_date_time"
+       gather_subset: "!all"
+
+   - name: Store DTG as fact
+     set_fact:
+       DTG: "{{ ansible_date_time.date }}"
+ 
+   - name: Create Directory {{hostvars.localhost.DTG}}
+     file:
+      path: "/home/reno/Documents/ansiblev3/backup/{{hostvars.localhost.DTG}}"
+      state: directory
+  run_once: true 
+
+
+- hosts: Cisco_Routers
+
+  tasks:
+   - name: Backup Config
+     ios_command:
+       commands: 
+         - show run
+     register: config
+
+   - name: Save output to ~/backup/
+     copy:
+       content: "{{config.stdout[0] }}"
+       dest: "/home/reno/Documents/ansiblev3/backup/{{hostvars.localhost.DTG}}/{{hostvars.localhost.DTG}}-{{inventory_hostname}}-config.txt"
+
+- hosts: vMX
+
+  tasks:
+   - name: Backup Config
+     junos_command:
+       commands: show configuration
+     register: config2
+
+   - name: Save output to /backup/
+     copy:
+       content: "{{config2.stdout[0]}}"
+       dest: "/home/reno/Documents/ansiblev3/backup/{{hostvars.localhost.DTG}}/{{hostvars.localhost.DTG}}-{{inventory_hostname}}-config.txt"

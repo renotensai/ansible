@@ -1,0 +1,29 @@
+---
+# Ansible Playbook for Configure Devices
+
+- hosts: Cisco_Routers
+
+  tasks:
+    - name: Show Run on Devices
+      ios_command:
+        commands:
+          - show run
+      register: config
+
+    - name: Get Current NTP Configured
+      set_fact: _servers = "{{ config.stdout[0] | regex_findall('^ntp server (\S+)', multiline=True) }}"
+
+    - name: Remove old NTP Server
+      ios_config:
+        lines:
+          - no ntp server {{ item }}
+      with_items: "{{ servers }}"
+
+    - name: Configure new NTP Server
+      ios_config:
+        lines:
+          - ntp server 4.5.6.7
+
+    - name: Save the Config Always
+      ios_config:
+        save_when: always 

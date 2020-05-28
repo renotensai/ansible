@@ -1,0 +1,31 @@
+---
+## Playbook to backup config on IOS & junos
+
+- hosts: Cisco_Routers
+
+  tasks:
+   - name: Backup Config
+     ios_command:
+       commands: show run
+     register: config
+
+   - name: Save output to ~/backup/
+     copy:
+       content: "{{config.stdout[0] }}"
+       dest: "/home/reno/Documents/ansiblev3/backup/{{inventory_hostname}}-config.txt"
+
+- hosts: vMX
+
+  tasks:
+   - name: Backup Config
+     junos_command:
+       commands: show config
+     register: config2
+
+   - name: Save output to /backup/
+     copy:
+       content: "{{config2.stdout[0]}}"
+       dest: "/home/reno/Documents/ansiblev3/backup/{{inventory_hostname}}-config.txt"
+
+
+
