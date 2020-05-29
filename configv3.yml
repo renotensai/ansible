@@ -1,0 +1,9 @@
+---
+# Playbook for config from folder template
+
+- hosts: Cisco_Routers
+
+  tasks:
+    - name: Push Config from Folder
+      ios_config:
+        src: "./config/{{inventory_hostname}}-template.txt"
