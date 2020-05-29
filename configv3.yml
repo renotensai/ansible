@@ -7,3 +7,7 @@
     - name: Push Config from Folder
       ios_config:
         src: "./config/{{inventory_hostname}}-template.txt"
+    
+    - name: Save the Config Always
+      ios_config:
+        save_when: always
